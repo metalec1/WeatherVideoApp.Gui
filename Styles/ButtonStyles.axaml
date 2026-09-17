@@ -1,0 +1,31 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Design.PreviewWith>
+        <Border Padding="20">
+            <!-- Add Controls for Previewer Here -->
+            <Button Classes="navigation" IsVisible="False">Test</Button>
+        </Border>
+    </Design.PreviewWith>
+
+    <!-- Add Styles Here -->
+    <Style Selector="Button.navigation">
+        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="Background">
+            <SolidColorBrush Color="#b86c11" Opacity="0.6"/>
+        </Setter>
+    </Style>
+    
+    <Style Selector="Button.navigation:pointerover /template/ ContentPresenter">
+        <Setter Property="Background">
+            <SolidColorBrush Color="#d68a2e" Opacity="0.6"/>
+        </Setter>
+    </Style>
+    
+    <Style Selector="Button.navigation:pressed /template/ ContentPresenter">
+        <Setter Property="Background">
+            <SolidColorBrush Color="#8f550d" Opacity="0.6"></SolidColorBrush>
+        </Setter>
+    </Style>
+    
+</Styles>

@@ -1,0 +1,15 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:WeatherVideoApp.Gui.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="WeatherVideoApp.Gui.Views.IssVideoFeedBackgroundView"
+             x:DataType="vm:IssVideoFeedBackgroundViewModel">
+             
+    <!--<NativeWebView Source="https://www.youtube.com/embed/0FBiyFpV__g" />
+    <NativeWebView Source="https://www.youtube.com/live/0FBiyFpV__g?si=Yn9S2zABL8_3bYl3" /> 
+    <NativeWebView x:Name="MyWebView" Loaded="OnLoaded" /> -->
+    <NativeWebView x:Name="MyWebView" Source="https://www.youtube.com/watch?v=0FBiyFpV__g" NavigationCompleted="OnNavigationCompleted" />
+    
+</UserControl>

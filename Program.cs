@@ -1,6 +1,5 @@
 ﻿using Avalonia;
 using System;
-
 namespace WeatherVideoApp.Gui;
 
 sealed class Program

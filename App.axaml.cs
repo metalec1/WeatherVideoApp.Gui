@@ -13,6 +13,7 @@ namespace WeatherVideoApp.Gui;
 public partial class App : Application
 {
     private bool _debug = true;
+    
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
@@ -38,6 +39,9 @@ public partial class App : Application
         
         serviceCollection.AddSingleton<IssLocationState>();
         serviceCollection.AddSingleton<MainViewModel>();
+        serviceCollection.AddSingleton<IssVideoFeedBackgroundViewModel>();
+        serviceCollection.AddSingleton<SettingsIssVideoViewModel>();
+        serviceCollection.AddSingleton<IssVideoSizeState>();
         serviceCollection.AddLogging(builder => builder.AddSerilog());
         var serviceProvider = serviceCollection.BuildServiceProvider();
 
