@@ -25,23 +25,27 @@
                         Grid.Column="{Binding BackgroundGridColumn}" 
                         Grid.ColumnSpan="{Binding BackgroundGridColumnSpan}" 
                         Grid.RowSpan="{Binding BackgroundGridRowSpan}" 
-                        Content="{Binding BackgroundViewModel}" Background="Blue"/>
+                        Content="{Binding BackgroundViewModel}"/>
         
         <Viewbox Grid.Row="0" Grid.Column="0" >
-            <Button Classes="navigation" Content="Settings" Command="{Binding ShowSettingsCommand}" 
+            <Button Classes="navigation" Classes.active="{Binding SettingsButtonActive}" 
+                    Content="Settings" Command="{Binding ShowSettingsCommand}" 
                     IsEnabled="{Binding VideoButtonsIsEnabled}" 
                     IsVisible="{Binding VideoButtonsIsVisible}"/>
         </Viewbox>
         <Viewbox Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2">
-            <Button Classes="navigation" Content="ISS Video feed" Command="{Binding ShowIssVideoFeed}"/>
+            <Button Classes="navigation" Classes.active="{Binding IssVideoFeedButtonActive}" 
+                    Content="ISS Video feed" Command="{Binding ShowIssVideoFeed}"/>
         </Viewbox>
         
         <Viewbox Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="2" >
-            <Button Classes="navigation" Content="video information" IsEnabled="{Binding VideoButtonsIsEnabled}"
+            <Button Classes="navigation" Classes.active="{Binding VideoInformationButtonActive}" 
+                    Content="video information" IsEnabled="{Binding VideoButtonsIsEnabled}"
                     IsVisible="{Binding VideoButtonsIsVisible}" Command="{Binding ShowVideoInformationCommand}"/>
         </Viewbox>
         <Viewbox Grid.Row="0" Grid.Column="8" Grid.ColumnSpan="2">
-            <Button Classes="navigation" Content="Program information" Command="{Binding ShowProgramInformation}"/>
+            <Button Classes="navigation" Classes.active="{Binding ProgramInformationButtonActive}" 
+                    Content="Program information" Command="{Binding ShowProgramInformation}"/>
         </Viewbox>
         
         <ContentControl Grid.Row="{Binding CurrentViewGridRow}" Grid.Column="{Binding CurrentViewGridColumn}" 

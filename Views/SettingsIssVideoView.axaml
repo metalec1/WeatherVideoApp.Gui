@@ -31,21 +31,24 @@
             <TextBlock  Text="Video 1"></TextBlock>
         </Viewbox>
         <Viewbox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
-            <Button Classes="navigation" Content="Watch it!" Command="{Binding Video1Command}"></Button>
+            <Button Classes="navigation" Classes.active="{Binding Video1ButtonIsActive}"
+                    Content="{Binding Video1ButtonContent}" Command="{Binding Video1Command}"></Button>
         </Viewbox>
         
         <Viewbox Grid.Row="2" Grid.Column="0">
             <TextBlock  Text="Video 2"></TextBlock>
         </Viewbox>
         <Viewbox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2">
-            <Button Classes="navigation" Content="Watch it!" Command="{Binding Video2Command}"></Button>
+            <Button Classes="navigation" Classes.active="{Binding Video2ButtonIsActive}" 
+                    Content="{Binding Video2ButtonContent}" Command="{Binding Video2Command}"></Button>
         </Viewbox>
         
         <Viewbox Grid.Row="3" Grid.Column="0">
             <TextBlock  Text="Video 3"></TextBlock>
         </Viewbox>
         <Viewbox Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2">
-            <Button Classes="navigation" Content="Watch it!" Command="{Binding Video3Command}"></Button>
+            <Button Classes="navigation" Classes.active="{Binding Video3ButtonIsActive}"
+                    Content="{Binding Video3ButtonContent}" Command="{Binding Video3Command}"></Button>
         </Viewbox>
         
     </Grid>

@@ -26,11 +26,6 @@ public partial class MainViewModel : ViewModelBase
     [ObservableProperty] public partial IssVideoSizeState CurrentIssVideoSizeState { get; set; }
     [ObservableProperty] public partial ViewModelBase CurrentIssLocation { get; set; }
     
-
-    private readonly int _issVideoFeedGridColumnSpan = 4;
-    private readonly int _issVideoFeedGridRowSpan = 3;
-    private readonly int _issVideoFeedGridRow = 2;
-    private readonly int _issVideoFeedGridColumn = 2;
     
     private readonly int _issVideoFeedSettingsGridColumnSpan = 3;
     private readonly int _issVideoFeedSettingsGridRowSpan = 7;
@@ -40,12 +35,8 @@ public partial class MainViewModel : ViewModelBase
     private readonly int _issVideoFeedInformationGridColumnSpan = 8;
     private readonly int _issVideoFeedInformationGridRowSpan = 7;
     private readonly int _issVideoFeedInformationGridRow = 1;
-    private readonly int _issVideoFeedInformationGridColumn = 1;
+    private readonly int _issVideoFeedInformationGridColumn = 2;
     
-    private readonly int _programInformationBackgroundGridColumnSpan = 10;
-    private readonly int _programInformationBackgroundGridRowSpan = 7;
-    private readonly int _programInformationBackgroundGridRow = 1;
-    private readonly int _programInformationBackgroundGridColumn = 0;
     
     private readonly int _programInformationGridColumnSpan = 8;
     private readonly int _programInformationGridRowSpan = 7;
@@ -56,7 +47,12 @@ public partial class MainViewModel : ViewModelBase
     private ViewModelBase _programInformationViewModel;
     private ViewModelBase _videoInformationViewModel;
     private IIssClientService _issClientService;
-   
+    
+    [ObservableProperty] public partial bool SettingsButtonActive { get; set; }
+    [ObservableProperty] public partial bool IssVideoFeedButtonActive { get; set; }
+    [ObservableProperty] public partial bool VideoInformationButtonActive { get; set; }
+    [ObservableProperty] public partial bool ProgramInformationButtonActive { get; set; }
+
 
 
     public MainViewModel(IssVideoFeedBackgroundViewModel issVideoFeedBackgroundViewModel, 
@@ -79,16 +75,41 @@ public partial class MainViewModel : ViewModelBase
         _issClientService.StartListening();
         CurrentIssLocation = issLocationViewModel;
         _videoInformationViewModel = videoInformationViewModel;
+        
+        ClearActiveButtons();
+        IssVideoFeedButtonActive = true;
+        
     }
-    
+
+    public void ClearActiveButtons()
+    {
+        SettingsButtonActive = false;
+        IssVideoFeedButtonActive = false;
+        VideoInformationButtonActive = false;
+        ProgramInformationButtonActive = false;
+    }
+
     [RelayCommand]
     public void ShowVideoInformation()
     {
-        CurrentViewModel = _videoInformationViewModel;
-        CurrentViewGridColumn = _issVideoFeedInformationGridColumn;
-        CurrentViewGridRow = _issVideoFeedInformationGridRow;
-        CurrentViewGridColumnSpan = _issVideoFeedInformationGridColumnSpan;
-        CurrentViewGridRowSpan = _issVideoFeedInformationGridRowSpan;
+        if (CurrentViewModel == _videoInformationViewModel)
+        {
+            CurrentViewModel = null;
+            ClearActiveButtons();
+            IssVideoFeedButtonActive = true;
+        }
+        else
+        {
+            ClearActiveButtons();
+            VideoInformationButtonActive = true;
+            CurrentViewModel = _videoInformationViewModel;
+            CurrentViewGridColumn = _issVideoFeedInformationGridColumn;
+            CurrentViewGridRow = _issVideoFeedInformationGridRow;
+            CurrentViewGridColumnSpan = _issVideoFeedInformationGridColumnSpan;
+            CurrentViewGridRowSpan = _issVideoFeedInformationGridRowSpan;
+        }
+
+        
     }
 
     public void UpdateVideoSize(object? sender, PropertyChangedEventArgs args)
@@ -113,10 +134,15 @@ public partial class MainViewModel : ViewModelBase
         if (CurrentViewModel == _settingsIssVideoViewModel)
         {
             CurrentViewModel = null;
+            ClearActiveButtons();
+            IssVideoFeedButtonActive = true;
+
         }
         else
         {
             SetSettingsGrid();
+            ClearActiveButtons();
+            SettingsButtonActive = true;
         }
 
         
@@ -135,26 +161,45 @@ public partial class MainViewModel : ViewModelBase
     [RelayCommand]
     public void ShowProgramInformation()
     {
+        if (CurrentViewModel == _programInformationViewModel)
+        {
+            CurrentViewModel = null;
+            ClearActiveButtons();
+            IssVideoFeedButtonActive = true;
+            VideoButtonsIsEnabled = true;
+            VideoButtonsIsVisible = true;
+        }
+        else
+        {
+            ClearActiveButtons();
+            ProgramInformationButtonActive = true;
+            VideoButtonsIsEnabled = false;
+            VideoButtonsIsVisible = false;
+            CurrentViewGridColumn = _programInformationGridColumn;
+            CurrentViewGridRow = _programInformationGridRow;
+            CurrentViewGridColumnSpan = _programInformationGridColumnSpan;
+            CurrentViewGridRowSpan = _programInformationGridRowSpan;
+            CurrentViewModel = _programInformationViewModel;
+        }
+
         
-        VideoButtonsIsEnabled = false;
-        VideoButtonsIsVisible = false;
-        CurrentViewGridColumn = _programInformationGridColumn;
-        CurrentViewGridRow = _programInformationGridRow;
-        CurrentViewGridColumnSpan = _programInformationGridColumnSpan;
-        CurrentViewGridRowSpan = _programInformationGridRowSpan;
-        CurrentViewModel = _programInformationViewModel;
         
     }
 
     [RelayCommand]
     public void ShowIssVideoFeed()
     {
-        SetSettingsGrid();
-        CurrentViewModel = null;
-        BackgroundViewModel = _issVideoFeedBackgroundViewModel;
-        VideoButtonsIsEnabled = true;
-        VideoButtonsIsVisible = true;
-        setIssVideoSizeState();
+        if (CurrentViewModel != null)
+        {
+            ClearActiveButtons();
+            IssVideoFeedButtonActive = true;
+            CurrentViewModel = null;
+            VideoButtonsIsEnabled = true;
+            VideoButtonsIsVisible = true;
+            setIssVideoSizeState();
+        }
+
+        
     }
 
 }

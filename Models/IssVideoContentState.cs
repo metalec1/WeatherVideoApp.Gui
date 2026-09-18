@@ -9,7 +9,7 @@ public partial class IssVideoContentState : ObservableObject
 
     public IssVideoContentState()
     {
-        VideoUrl = new Uri("https://www.youtube.com/watch?v=jzkTOu1-BGA");
+        VideoUrl = new Uri("https://www.youtube.com/watch?v=0FBiyFpV__g");
     }
 
     public void SetVideoUriTo(string videoUrl)
