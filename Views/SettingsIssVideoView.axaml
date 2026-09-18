@@ -50,6 +50,6 @@
         
     </Grid>
     <UserControl.Background>
-        <SolidColorBrush Color="#c68940" Opacity="0.6"></SolidColorBrush>
+        <StaticResource ResourceKey="OverlayControlBrush"/>
     </UserControl.Background>
 </UserControl>

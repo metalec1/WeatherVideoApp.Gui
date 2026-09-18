@@ -11,6 +11,14 @@
 
     <Application.Styles>
         <FluentTheme />
-        <StyleInclude Source="avares://WeatherVideoApp.Gui/Styles/ButtonStyles.axaml"/>
+        <StyleInclude Source="avares://WeatherVideoApp.Gui/Styles/Styles.axaml"/>
     </Application.Styles>
+             
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceInclude Source="avares://WeatherVideoApp.Gui/Styles/Colors.axaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>

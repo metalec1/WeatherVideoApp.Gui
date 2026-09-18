@@ -8,9 +8,9 @@
              x:DataType="vm:VideoInformationViewModel">
     
     <ScrollViewer>
-        <TextBlock Text="{Binding VideoInformationText}" TextWrapping="Wrap" />
+        <TextBlock Text="{Binding VideoInformationText}" TextWrapping="Wrap" Foreground="{DynamicResource TextPrimaryBrush}" />
     </ScrollViewer>
     <UserControl.Background>
-        <SolidColorBrush Color="#c68940" Opacity="0.95"></SolidColorBrush>
+        <StaticResource ResourceKey="OverlayContentBrush"/>
     </UserControl.Background>
 </UserControl>

@@ -5,9 +5,9 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="WeatherVideoApp.Gui.Views.ProgramInformationView">
     
-        <TextBlock>HELOOOOOOO</TextBlock>
+        <TextBlock >HELOOOOOOO</TextBlock>
     
     <UserControl.Background>
-        <SolidColorBrush Color="Blue"></SolidColorBrush>
+        <StaticResource ResourceKey="OverlayContentBrush"/>
     </UserControl.Background>
 </UserControl>

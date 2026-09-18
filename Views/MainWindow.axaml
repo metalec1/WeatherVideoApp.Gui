@@ -16,7 +16,7 @@
     </Design.DataContext>
     
     <Grid RowDefinitions="*,*,*,*,*,*,*,*" ShowGridLines="True"
-          ColumnDefinitions="*,*,*,*,*,*,*,*,*,*" Background="#a38f34">
+          ColumnDefinitions="*,*,*,*,*,*,*,*,*,*" Background="{DynamicResource WindowBackgroundBrush}">
         
         <ContentControl Grid.Row="{Binding LonLatGridRow}" Grid.Column="{Binding LonLatGridColumn}" 
                         Grid.RowSpan="3" Grid.ColumnSpan="2" Content="{Binding CurrentIssLocation}"></ContentControl>
