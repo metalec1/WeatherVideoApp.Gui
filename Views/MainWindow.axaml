@@ -18,27 +18,35 @@
     <Grid RowDefinitions="*,*,*,*,*,*,*,*" ShowGridLines="True"
           ColumnDefinitions="*,*,*,*,*,*,*,*,*,*" Background="#a38f34">
         
+        <ContentControl Grid.Row="{Binding LonLatGridRow}" Grid.Column="{Binding LonLatGridColumn}" 
+                        Grid.RowSpan="3" Grid.ColumnSpan="2" Content="{Binding CurrentIssLocation}"></ContentControl>
+        
         <ContentControl Grid.Row="{Binding BackgroundGridRow}" 
                         Grid.Column="{Binding BackgroundGridColumn}" 
                         Grid.ColumnSpan="{Binding BackgroundGridColumnSpan}" 
                         Grid.RowSpan="{Binding BackgroundGridRowSpan}" 
                         Content="{Binding BackgroundViewModel}" Background="Blue"/>
         
-        <Viewbox Grid.Row="0" Grid.Column="0" IsEnabled="true" IsVisible="true">
-            <Button Classes="navigation" Content="Settings" Command="{Binding ShowSettingsCommand}"/>
+        <Viewbox Grid.Row="0" Grid.Column="0" >
+            <Button Classes="navigation" Content="Settings" Command="{Binding ShowSettingsCommand}" 
+                    IsEnabled="{Binding VideoButtonsIsEnabled}" 
+                    IsVisible="{Binding VideoButtonsIsVisible}"/>
         </Viewbox>
         <Viewbox Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2">
-            <Button Classes="navigation" Content="ISS Video feed"/>
+            <Button Classes="navigation" Content="ISS Video feed" Command="{Binding ShowIssVideoFeed}"/>
         </Viewbox>
         
-        <Viewbox Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="2">
-            <Button Classes="navigation" Content="video information"/>
+        <Viewbox Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="2" >
+            <Button Classes="navigation" Content="video information" IsEnabled="{Binding VideoButtonsIsEnabled}"
+                    IsVisible="{Binding VideoButtonsIsVisible}" Command="{Binding ShowVideoInformationCommand}"/>
         </Viewbox>
         <Viewbox Grid.Row="0" Grid.Column="8" Grid.ColumnSpan="2">
-            <Button Classes="navigation" Content="Program information"/>
+            <Button Classes="navigation" Content="Program information" Command="{Binding ShowProgramInformation}"/>
         </Viewbox>
         
-        <ContentControl Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="7" Content="{Binding CurrentViewModel}"/>
+        <ContentControl Grid.Row="{Binding CurrentViewGridRow}" Grid.Column="{Binding CurrentViewGridColumn}" 
+                        Grid.ColumnSpan="{Binding CurrentViewGridColumnSpan}" 
+                        Grid.RowSpan="{Binding CurrentViewGridRowSpan}" Content="{Binding CurrentViewModel}"/>
     </Grid>
     <!--
     <TextBox Text="{Binding Greeting}"

@@ -36,6 +36,7 @@ public class FakeIssClientService : IIssClientService
                 );
                 
                 _logger.LogDebug("Generated fake ISS reading: {Reading}", locationReading);   
+                _logger.LogInformation("Generated fake ISS reading: {Reading}", locationReading);   
                 IssLocationReceived?.Invoke(locationReading);
             }
         });

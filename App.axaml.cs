@@ -42,6 +42,11 @@ public partial class App : Application
         serviceCollection.AddSingleton<IssVideoFeedBackgroundViewModel>();
         serviceCollection.AddSingleton<SettingsIssVideoViewModel>();
         serviceCollection.AddSingleton<IssVideoSizeState>();
+        serviceCollection.AddSingleton<IssVideoContentState>();
+        serviceCollection.AddSingleton<ProgramInformationViewModel>();
+        serviceCollection.AddSingleton<IssLocationState>();
+        serviceCollection.AddSingleton<IssLocationViewModel>();
+        serviceCollection.AddSingleton<VideoInformationViewModel>();
         serviceCollection.AddLogging(builder => builder.AddSerilog());
         var serviceProvider = serviceCollection.BuildServiceProvider();
 

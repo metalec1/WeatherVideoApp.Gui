@@ -23,7 +23,7 @@ public partial class IssVideoSizeState : ObservableObject
 
     public void ResizeVideoPlus()
     {
-        if (VideoWidth < 9 && VideoHeight < 8)
+        if (VideoWidth < 8 && VideoHeight < 7)
         {
             VideoWidth +=  1;
             VideoHeight += 1;

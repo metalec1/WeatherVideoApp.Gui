@@ -26,8 +26,30 @@
         <Viewbox Grid.Row="0" Grid.Column="2">
             <Button Classes="navigation" Content="-" Command="{Binding VideoSmallerCommand}"></Button>
         </Viewbox>
+        
+        <Viewbox Grid.Row="1" Grid.Column="0">
+            <TextBlock  Text="Video 1"></TextBlock>
+        </Viewbox>
+        <Viewbox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+            <Button Classes="navigation" Content="Watch it!" Command="{Binding Video1Command}"></Button>
+        </Viewbox>
+        
+        <Viewbox Grid.Row="2" Grid.Column="0">
+            <TextBlock  Text="Video 2"></TextBlock>
+        </Viewbox>
+        <Viewbox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2">
+            <Button Classes="navigation" Content="Watch it!" Command="{Binding Video2Command}"></Button>
+        </Viewbox>
+        
+        <Viewbox Grid.Row="3" Grid.Column="0">
+            <TextBlock  Text="Video 3"></TextBlock>
+        </Viewbox>
+        <Viewbox Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2">
+            <Button Classes="navigation" Content="Watch it!" Command="{Binding Video3Command}"></Button>
+        </Viewbox>
+        
     </Grid>
     <UserControl.Background>
-        <SolidColorBrush Color="#b86c11" Opacity="0.9"></SolidColorBrush>
+        <SolidColorBrush Color="#c68940" Opacity="0.6"></SolidColorBrush>
     </UserControl.Background>
 </UserControl>

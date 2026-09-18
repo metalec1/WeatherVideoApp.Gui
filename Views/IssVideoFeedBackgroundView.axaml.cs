@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
@@ -53,5 +54,15 @@ public partial class IssVideoFeedBackgroundView : UserControl
                                          document.head.appendChild(style);
                                          """);
         }
+    }
+    
+    public async Task SetVideoMuted(bool muted)
+    {
+        await MyWebView.InvokeScript($$"""
+                                       var video = document.querySelector('video');
+                                       if (video) {
+                                           video.muted = {{muted.ToString().ToLower()}};
+                                       }
+                                       """);
     }
 }
