@@ -16,7 +16,7 @@
         <vm:SettingsIssVideoViewModel />
     </Design.DataContext>
     
-    <Grid RowDefinitions="*,*,*,*,*,*,*" ColumnDefinitions="*,*,*" ShowGridLines="True">
+    <Grid RowDefinitions="*,*,*,*,*,*,*" ColumnDefinitions="*,*,*" ShowGridLines="False">
         <Viewbox Grid.Row="0" Grid.Column="0">
             <TextBlock  Text="Video Size"></TextBlock>
         </Viewbox>

@@ -53,6 +53,7 @@ public partial class IssVideoFeedBackgroundView : UserControl
                                          `;
                                          document.head.appendChild(style);
                                          """);
+            await SetVideoMuted(true);
         }
     }
     

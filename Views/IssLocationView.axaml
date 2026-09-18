@@ -7,7 +7,7 @@
              x:Class="WeatherVideoApp.Gui.Views.IssLocationView"
              x:DataType="vm:IssLocationViewModel">
              
-            <Grid RowDefinitions="*,*,*" ColumnDefinitions="*,*" ShowGridLines="True">
+            <Grid RowDefinitions="*,*,*" ColumnDefinitions="*,*" ShowGridLines="False">
                 <Viewbox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
                     <TextBlock Text="Real time ISS location update" TextWrapping="Wrap"></TextBlock>
                 </Viewbox>

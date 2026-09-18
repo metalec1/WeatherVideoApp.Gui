@@ -15,11 +15,11 @@
         <vm:MainViewModel />
     </Design.DataContext>
     
-    <Grid RowDefinitions="*,*,*,*,*,*,*,*" ShowGridLines="True"
+    <Grid RowDefinitions="*,*,*,*,*,*,*,*" ShowGridLines="False"
           ColumnDefinitions="*,*,*,*,*,*,*,*,*,*" Background="{DynamicResource WindowBackgroundBrush}">
         
         <ContentControl Grid.Row="{Binding LonLatGridRow}" Grid.Column="{Binding LonLatGridColumn}" 
-                        Grid.RowSpan="3" Grid.ColumnSpan="2" Content="{Binding CurrentIssLocation}"></ContentControl>
+                        Grid.RowSpan="3" Grid.ColumnSpan="2" Content="{Binding CurrentIssLocation}"/>
         
         <ContentControl Grid.Row="{Binding BackgroundGridRow}" 
                         Grid.Column="{Binding BackgroundGridColumn}" 

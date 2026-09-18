@@ -1,15 +1,19 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     
-    <SolidColorBrush x:Key="WindowBackgroundBrush" Color="#14171D"/>
-    <SolidColorBrush x:Key="OverlayControlBrush" Color="#2B2118" Opacity="0.65"/>
-    <SolidColorBrush x:Key="OverlayContentBrush" Color="#201A14" Opacity="0.96"/>
-    <SolidColorBrush x:Key="TextPrimaryBrush" Color="#F2E9DD"/>
-    <SolidColorBrush x:Key="TextSecondaryBrush" Color="#B9AFA0"/>
-    <SolidColorBrush x:Key="ButtonBaseBrush" Color="#B86C11" Opacity="0.6"/>
-    <SolidColorBrush x:Key="ButtonHoverBrush" Color="#D68A2E" Opacity="0.6"/>
-    <SolidColorBrush x:Key="ButtonPressedBrush" Color="#8F550D" Opacity="0.6"/>
-    <SolidColorBrush x:Key="ButtonActiveBrush" Color="#C9A227"/>
-    <SolidColorBrush x:Key="ButtonActiveBorderBrush" Color="#F2E9DD"/>
-    <SolidColorBrush x:Key="ButtonActiveHoverBrush" Color="#E0B93E"/>
+    <SolidColorBrush x:Key="WindowBackgroundBrush" Color="#1A1A1A"/>
+
+    <SolidColorBrush x:Key="OverlayControlBrush" Color="#242424" Opacity="0.75"/>
+    <SolidColorBrush x:Key="OverlayContentBrush" Color="#202020" Opacity="0.85"/>
+    <SolidColorBrush x:Key="OverlayInfoBrush" Color="#202020" Opacity="1"/>
+
+    <SolidColorBrush x:Key="TextPrimaryBrush" Color="#A9B7C6"/>
+    <SolidColorBrush x:Key="TextSecondaryBrush" Color="#808080"/>
+
+    <SolidColorBrush x:Key="ButtonBaseBrush" Color="#365880" Opacity="0.85"/>
+    <SolidColorBrush x:Key="ButtonHoverBrush" Color="#3592C4" Opacity="0.85"/>
+    <SolidColorBrush x:Key="ButtonPressedBrush" Color="#28465F" Opacity="0.85"/>
+    <SolidColorBrush x:Key="ButtonActiveBrush" Color="#3574F0"/>
+    <SolidColorBrush x:Key="ButtonActiveBorderBrush" Color="#A9B7C6"/>
+    <SolidColorBrush x:Key="ButtonActiveHoverBrush" Color="#5A90F5"/>
 </ResourceDictionary>
