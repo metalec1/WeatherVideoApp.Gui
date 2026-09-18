@@ -9,20 +9,24 @@
              
             <Grid RowDefinitions="*,*,*" ColumnDefinitions="*,*" ShowGridLines="False">
                 <Viewbox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
-                    <TextBlock Text="Real time ISS location update" TextWrapping="Wrap"></TextBlock>
+                    <TextBlock Text="Real time ISS location update" TextWrapping="Wrap"/>
                 </Viewbox>
+                
                 <Viewbox Grid.Row="1" Grid.Column="0">
-                    <TextBlock Text="Latitude"></TextBlock>
+                    <TextBlock Text="Latitude"/>
                 </Viewbox>
+                
                 <Viewbox Grid.Row="1" Grid.Column="1">
-                    <TextBlock Text="{Binding CurrentIssLocationState.Latitude}"></TextBlock>
+                    <TextBlock Text="{Binding CurrentIssLocationState.Latitude}"/>
                 </Viewbox>
                 
                 <Viewbox Grid.Row="2" Grid.Column="0">
-                    <TextBlock Text="Longitude"></TextBlock>
+                    <TextBlock Text="Longitude"/>
                 </Viewbox>
+                
                 <Viewbox Grid.Row="2" Grid.Column="1">
-                    <TextBlock Text="{Binding CurrentIssLocationState.Longitude}"></TextBlock>
+                    <TextBlock Text="{Binding CurrentIssLocationState.Longitude}"/>
                 </Viewbox>
+                
             </Grid>
 </UserControl>

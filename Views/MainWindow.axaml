@@ -18,8 +18,10 @@
     <Grid RowDefinitions="*,*,*,*,*,*,*,*" ShowGridLines="False"
           ColumnDefinitions="*,*,*,*,*,*,*,*,*,*" Background="{DynamicResource WindowBackgroundBrush}">
         
-        <ContentControl Grid.Row="{Binding LonLatGridRow}" Grid.Column="{Binding LonLatGridColumn}" 
-                        Grid.RowSpan="3" Grid.ColumnSpan="2" Content="{Binding CurrentIssLocation}"/>
+        <ContentControl Grid.Row="{Binding LonLatGridRow}" 
+                        Grid.Column="{Binding LonLatGridColumn}" 
+                        Grid.RowSpan="3" Grid.ColumnSpan="2" 
+                        Content="{Binding CurrentIssLocation}"/>
         
         <ContentControl Grid.Row="{Binding BackgroundGridRow}" 
                         Grid.Column="{Binding BackgroundGridColumn}" 
@@ -33,6 +35,7 @@
                     IsEnabled="{Binding VideoButtonsIsEnabled}" 
                     IsVisible="{Binding VideoButtonsIsVisible}"/>
         </Viewbox>
+        
         <Viewbox Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2">
             <Button Classes="navigation" Classes.active="{Binding IssVideoFeedButtonActive}" 
                     Content="ISS Video feed" Command="{Binding ShowIssVideoFeed}"/>
@@ -41,20 +44,19 @@
         <Viewbox Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="2" >
             <Button Classes="navigation" Classes.active="{Binding VideoInformationButtonActive}" 
                     Content="video information" IsEnabled="{Binding VideoButtonsIsEnabled}"
-                    IsVisible="{Binding VideoButtonsIsVisible}" Command="{Binding ShowVideoInformationCommand}"/>
+                    IsVisible="{Binding VideoButtonsIsVisible}" 
+                    Command="{Binding ShowVideoInformationCommand}"/>
         </Viewbox>
         <Viewbox Grid.Row="0" Grid.Column="8" Grid.ColumnSpan="2">
             <Button Classes="navigation" Classes.active="{Binding ProgramInformationButtonActive}" 
                     Content="Program information" Command="{Binding ShowProgramInformation}"/>
         </Viewbox>
         
-        <ContentControl Grid.Row="{Binding CurrentViewGridRow}" Grid.Column="{Binding CurrentViewGridColumn}" 
+        <ContentControl Grid.Row="{Binding CurrentViewGridRow}" 
+                        Grid.Column="{Binding CurrentViewGridColumn}" 
                         Grid.ColumnSpan="{Binding CurrentViewGridColumnSpan}" 
-                        Grid.RowSpan="{Binding CurrentViewGridRowSpan}" Content="{Binding CurrentViewModel}"/>
+                        Grid.RowSpan="{Binding CurrentViewGridRowSpan}" 
+                        Content="{Binding CurrentViewModel}"/>
     </Grid>
-    <!--
-    <TextBox Text="{Binding Greeting}"
-             HorizontalAlignment="Center"
-             VerticalAlignment="Center" /> -->
-
+   
 </Window>

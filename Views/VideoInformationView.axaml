@@ -8,7 +8,8 @@
              x:DataType="vm:VideoInformationViewModel">
     
     <ScrollViewer>
-        <TextBlock Text="{Binding VideoInformationText}" TextWrapping="Wrap" Foreground="{DynamicResource TextPrimaryBrush}" />
+        <TextBlock Text="{Binding VideoInformationText}" 
+                   TextWrapping="Wrap" Foreground="{DynamicResource TextPrimaryBrush}" />
     </ScrollViewer>
     <UserControl.Background>
         <StaticResource ResourceKey="OverlayContentBrush"/>
