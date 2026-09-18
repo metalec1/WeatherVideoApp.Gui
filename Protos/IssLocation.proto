@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option csharp_namespace = "WeatherVideoApp.Gui";
+
+package iss_location;
+import "google/protobuf/timestamp.proto";
+
+
+service IssLocationService {
+
+  rpc SubscribeToIssLocation (IssLocationUpdateRequest) returns (stream IssLocationUpdateReply);
+}
+
+// The request message containing the user's name.
+message IssLocationUpdateRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings.
+message IssLocationUpdateReply {
+  google.protobuf.Timestamp timestamp = 1;
+  string message = 2;
+  float latitude = 3;
+  float longitude = 4;
+}

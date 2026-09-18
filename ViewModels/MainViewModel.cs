@@ -72,7 +72,7 @@ public partial class MainViewModel : ViewModelBase
         VideoButtonsIsEnabled = true;
         VideoButtonsIsVisible = true;
         _issClientService = issClientService;
-        _issClientService.StartListening();
+        _ = _issClientService.StartListening();
         CurrentIssLocation = issLocationViewModel;
         _videoInformationViewModel = videoInformationViewModel;
         

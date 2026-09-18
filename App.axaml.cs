@@ -12,7 +12,7 @@ namespace WeatherVideoApp.Gui;
 
 public partial class App : Application
 {
-    private bool _debug = true;
+    private bool _debug = false;
     
     public override void Initialize()
     {
@@ -34,7 +34,7 @@ public partial class App : Application
         }
         else
         {
-            //serviceCollection.AddSingleton<IIssClientService, IssClientService>(); // yet to create and implement
+            serviceCollection.AddSingleton<IIssClientService, IssClientService>(); 
         }
         
         serviceCollection.AddSingleton<IssLocationState>();
